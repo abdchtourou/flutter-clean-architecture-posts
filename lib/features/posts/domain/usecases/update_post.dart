@@ -9,7 +9,7 @@ class UpdatePost {
 
   UpdatePost(this.postsRepo);
 
-  Future<Either<Failure, Unit>> updatePost(Posts post) async {
+  Future<Either<Failure, Unit>> call(Posts post) async {
     return await postsRepo.updatePost(post);
     }
 }
