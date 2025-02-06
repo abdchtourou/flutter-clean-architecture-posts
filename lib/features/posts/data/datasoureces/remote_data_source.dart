@@ -35,23 +35,23 @@ class RemoteDataSourceImpl implements RemoteDataSource {
 
   @override
   Future<Unit> deletePost(int id) async {
-    final response =await apiServices.deleteData('$baseUrl/posts/$id');
+    final response = await apiServices.deleteData('$baseUrl/posts/$id');
     if (response.statusCode == 201) {
       return Future.value(unit);
-    }else{
+    } else {
       throw ServerException();
     }
   }
 
   @override
   Future<Unit> updatePost(PostModel postModel) async {
-   final response= await apiServices.updateData(
+    final response = await apiServices.updateData(
       '$baseUrl/posts/${postModel.id}',
       postModel.toJson(),
     );
     if (response.statusCode == 201) {
       return Future.value(unit);
-    }else{
+    } else {
       throw ServerException();
     }
   }
@@ -64,7 +64,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
     );
     if (response.statusCode == 201) {
       return Future.value(unit);
-    }else{
+    } else {
       throw ServerException();
     }
   }

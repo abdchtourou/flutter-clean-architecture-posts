@@ -52,7 +52,7 @@ class PostRepoImp implements PostsRepo {
       }
     } else {
       try {
-        final localPosts = await postDataLocalSource.getAllPost();
+        final localPosts = await postDataLocalSource.getCachedPost();
         return Right(localPosts);
       } on EmptyCacheException {
         return left(EmptyCacheFailure());
@@ -86,3 +86,4 @@ class PostRepoImp implements PostsRepo {
     }
   }
 }
+  
