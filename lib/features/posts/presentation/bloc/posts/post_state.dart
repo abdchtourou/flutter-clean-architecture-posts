@@ -27,7 +27,7 @@ final class PostLoaded extends PostState {
 
 final class PostError extends PostState {
   final String failure;
-  PostError(this.failure);  
+  const PostError(this.failure);
 
   @override
   List<Object> get props => [failure];
