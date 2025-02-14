@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_posts/core/error/failure.dart';
 import 'package:flutter_posts/features/posts/domain/entities/posts.dart';
-import 'package:flutter_posts/features/posts/domain/usecases/get_all_post.dart';
+import 'package:flutter_posts/features/posts/domain/usecases/get_all_post_use_case.dart';
 
 import '../../../../../core/string/failures.dart';
 
@@ -11,7 +11,7 @@ part 'post_event.dart';
 part 'post_state.dart';
 
 class PostBloc extends Bloc<PostEvent, PostState> {
-  final GetAllPostUsecase getAllPost;
+  final GetAllPostUseCase getAllPost;
 
   PostBloc({required this.getAllPost}) : super(PostInitial()) {
     on<PostEvent>((event, emit) async {

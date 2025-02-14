@@ -6,9 +6,9 @@ import 'package:flutter_posts/features/posts/domain/entities/posts.dart';
 
 import '../../../../../core/error/failure.dart';
 import '../../../../../core/string/failures.dart';
-import '../../../domain/usecases/add_post.dart';
-import '../../../domain/usecases/delete_post.dart';
-import '../../../domain/usecases/update_post.dart';
+import '../../../domain/usecases/add_post_use_case.dart';
+import '../../../domain/usecases/delete_post_use_case.dart';
+import '../../../domain/usecases/update_post_use_case.dart';
 
 part 'add_delete_update_event.dart';
 
@@ -16,9 +16,9 @@ part 'add_delete_update_state.dart';
 
 class AddDeleteUpdateBloc
     extends Bloc<AddDeleteUpdateEvent, AddDeleteUpdateState> {
-  final AddPost addPost;
-  final DeletePost deletePost;
-  final UpdatePost updatePost;
+  final AddPostUseCase addPost;
+  final DeletePostUseCase deletePost;
+  final UpdatePostUseCase updatePost;
 
   AddDeleteUpdateBloc({
     required this.addPost,
